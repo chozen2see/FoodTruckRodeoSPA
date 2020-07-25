@@ -8,5 +8,6 @@ if (environment.production) {
   enableProdMode();
 }
 
+// using this b/c building web app that uses browser and bootstraps the AppModule class (DatingApp-SPA/src/app/app.module.ts)
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
