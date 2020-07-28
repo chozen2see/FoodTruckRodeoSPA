@@ -22,4 +22,5 @@ import { Component } from '@angular/core';
 export class AppComponent { //js class w/ angular features
   // property interpolated into HTML
   title = 'Dating App';
+  // appName = 'Date Me';
 }
