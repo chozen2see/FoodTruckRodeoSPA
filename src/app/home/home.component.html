@@ -39,7 +39,6 @@
         <!-- pass values as INPUT prop (valuesFromHome) to child component app-register -->
         <!-- the (cancelRegister) event receives the $event from the child register component when the cancel button is clicked on the child register component's form and passes it to the cancelRegisterMode funct -->
         <app-register 
-          [valuesFromHome]="values"
           (cancelRegister)="cancelRegisterMode($event)">
         </app-register>
       </div>
