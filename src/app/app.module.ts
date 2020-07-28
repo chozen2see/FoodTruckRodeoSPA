@@ -1,25 +1,36 @@
+// MODULES
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+// COMPONENTS
 import { AppComponent } from './app.component';
-import { ValueComponent } from './value/value.component';
 import { NavComponent } from './nav/nav.component';
 
+// SERVICES
+import { AuthService } from './_services/auth.service';
+import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
+
 // must have at least one file decorated w @NgModule
+// services get added to providers array
+
 @NgModule({
    declarations: [
       AppComponent,
-      ValueComponent,
-      NavComponent
+      NavComponent,
+      HomeComponent,
+      RegisterComponent
    ],
    imports: [
       BrowserModule,
       HttpClientModule,
       FormsModule
    ],
-   providers: [],
+   providers: [
+      AuthService
+   ],
    bootstrap: [
       AppComponent
    ]

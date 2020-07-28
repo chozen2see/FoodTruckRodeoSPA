@@ -1,0 +1,48 @@
+<div class="container mt-5">
+  <div class="pageTitle">
+    <h3>soul food on the go</h3>
+  </div>
+  <hr class="separator"/>
+  <div class="callout">
+    <h5>Summer Specials</h5>
+    <p>INTRODUCING OUR EXCLUSIVE "SUMMER'S BREEZE"
+      STRAWBERRY LEMONADE MADE WITH REAL HAND
+      JUICED FRESH STRAWBERRIES AND LEMONS.</p>
+    <p class="text-right" style="text-align: right;">$3 (16OZ)</p>
+
+    <p>ITALIAN ICEES ARE BACK!<br />
+      PINA COLADA. BLUE RASPBERRY. STRAWBERRY.</p>
+    <p class="text-right" style="text-align: right;">$2.50 PER CUP</p>
+  </div>
+  <div class="footnote small text-center">
+    PRESSED FOR TIME? <a href="#">LOGIN</a> TO PLACE YOUR ORDER. NEED AN ACCOUNT? <a href="#">REGISTER HERE</a>.
+  </div>
+
+  <div class="mb-4"></div>
+
+  <div *ngIf="!registerMode" style="text-align: center">
+    <h1>Find your match</h1>
+    <p class="lead">Come on in to view your matches... All you need to do is sign up!</p>
+    <div class="text-center">
+      <button 
+        class="btn btn-primary btn-lg mr-2" 
+        (click)="registerToggle()">
+        Register
+      </button>
+      <button class="btn btn-info btn-lg">Learn more</button>
+    </div>
+  </div>
+
+  <div *ngIf="registerMode" class="container">
+    <div class="row justify-content-end">
+      <div class="col-4">
+        <!-- pass values as INPUT prop (valuesFromHome) to child component app-register -->
+        <!-- the (cancelRegister) event receives the $event from the child register component when the cancel button is clicked on the child register component's form and passes it to the cancelRegisterMode funct -->
+        <app-register 
+          [valuesFromHome]="values"
+          (cancelRegister)="cancelRegisterMode($event)">
+        </app-register>
+      </div>
+    </div>
+  </div>
+</div>

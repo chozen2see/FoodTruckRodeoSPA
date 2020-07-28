@@ -5,15 +5,16 @@ import { HttpClient } from '@angular/common/http';
 // to bring in HTTP client to use this to call API
 
 @Component({
-  selector: 'app-value',
-  templateUrl: './value.component.html',
-  styleUrls: ['./value.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class ValueComponent implements OnInit {
+export class HomeComponent implements OnInit {
   // implements OnInit interface - lifecycle event
-
+  
   // property that can accept any type of value
   values: any;
+  registerMode = false;
 
   // inject HttpClient to make calls to API BackEnd
   constructor(private http: HttpClient) { }
@@ -21,6 +22,11 @@ export class ValueComponent implements OnInit {
   // make call to API here
   ngOnInit() {
     this.getValues();
+  }
+
+  // will set register mode to true
+  registerToggle() {
+    this.registerMode = true;
   }
 
   getValues() {
@@ -35,6 +41,11 @@ export class ValueComponent implements OnInit {
     }, error => {
       console.log(error);
     });
+  }
+
+  // used to set the register mode based on value OUTPUT from child component as $event in home.component.html
+  cancelRegisterMode(registerMode: boolean) {
+    this.registerMode = registerMode;
   }
 
 }
