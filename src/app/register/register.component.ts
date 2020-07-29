@@ -37,4 +37,6 @@ export class RegisterComponent implements OnInit {
     this.alertify.message('Registration canceled.');
   }
 
+  
+
 }

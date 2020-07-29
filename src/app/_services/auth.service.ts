@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { ArgumentType } from '@angular/compiler/src/core';
 
 // inject things into service. services are not injectable by default so must add @Injectable decorator
 @Injectable({
@@ -9,6 +11,10 @@ import { map } from 'rxjs/operators';
 export class AuthService {
 
   baseUrl = 'http://localhost:5000/api/auth/';
+  // authO helper service
+  jwtHelper = new JwtHelperService();
+  // token decoded by authO
+  decodedToken: any;
 
   // make use of HttpClient module and service
   constructor(private http: HttpClient) { }
@@ -17,7 +23,7 @@ export class AuthService {
   login(model: any) {
     // replicate post used in postman here
     // use rxjs operator (map) in our request using pipe
-    
+
     return this.http.post(this.baseUrl + 'login', model)
       .pipe(// take response, transform it and do something
         map((response: any) => {
@@ -25,6 +31,8 @@ export class AuthService {
           const user = response;
           if (user) {
             localStorage.setItem('token', user.token);
+            this.decodedToken =
+              this.jwtHelper.decodeToken(user.token);
           }
         })
       );
@@ -35,6 +43,14 @@ export class AuthService {
   register(model: any) {
     // @return — An Observable of the response, with the response body as a JSON object. Will handle in register component
     return this.http.post(this.baseUrl + 'register', model);
+  }
+
+  // check to see if user is logged in
+  loggedIn() {
+    const token = localStorage.getItem('token');
+
+    // !! if something in token true otherwise false
+    return !this.jwtHelper.isTokenExpired(token);
   }
 
 }
