@@ -1,0 +1,39 @@
+.placemat-inner,
+.placemat {
+  padding: 30px;
+  border-radius: 25px;
+}
+
+.placemat-inner {
+  opacity: 0.8;
+}
+
+.placemat {
+  z-index: 10;
+  opacity: 0.9;
+}
+
+.div-rs-logo {
+  width: 150px;
+}
+
+.rs-logo {
+  width: 100%;
+}
+
+.cursor:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.menu > p {
+  font-size: 1.5em;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  opacity: 0.8;
+  color: bisque;
+}
