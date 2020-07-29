@@ -38,10 +38,15 @@
 <!-- angular template reference variable -->
 <!-- forms supports 2way binding from template to component using ngModel directive -->
   <form *ngIf="!loggedIn()" #loginForm="ngForm" class="form-inline my-2 my-lg-0" (ngSubmit)="login()">
-    <input class="form-control mr-sm-2" type="text" name="username" placeholder="Username" required [(ngModel)]="model.username" #username="ngModel">
-    <input class="form-control mr-sm-2" type="password" name="password" placeholder="Password" required [(ngModel)]="model.password" #password="ngModel">
+
+    <input class="form-control mr-sm-2" type="text" name="username" placeholder="Username" required [(ngModel)]="model.username" #username="ngModel"  autocomplete="username">
+
+    <input class="form-control mr-sm-2" type="password" name="password" placeholder="Password" required [(ngModel)]="model.password" #password="ngModel"  autocomplete="current-password">
+
     <button [disabled]="!loginForm.valid" class="btn btn-success my-2 my-sm-0" type="submit">Login</button>
+
   </form>
+
 </nav>
 
 <!-- <pre>
