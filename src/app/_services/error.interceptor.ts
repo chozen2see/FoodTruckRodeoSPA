@@ -51,7 +51,7 @@ export class ErrorInterceptor implements HttpInterceptor {
               if (serverError.errors[key]) {
                 // build list of strings for each modal state error being returned from server
                 modalStateErrors +=
-                  serverError.errors[key] + '\n';
+                  serverError.errors[key] + '<br/>';
               }
             }
 

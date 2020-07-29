@@ -13,5 +13,12 @@
     {
       "path": "./tsconfig.spec.json"
     }
-  ]
+  ],
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  }
 }
