@@ -1,7 +1,8 @@
 .app {
   height: 100vh;
-  background: url('../assets/img/rsBackground.png') ;
+  /* background: url('../assets/img/rsBackground.png') ;
   background-repeat: no-repeat;
-  background-size: cover;
-  /* opacity: 0.95; */
+  background-size: cover; */
+  /* opacity: 0.95; 
+  background-color: black;*/
 }

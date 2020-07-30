@@ -25,21 +25,22 @@ export class NavComponent implements OnInit {
 
   login() {
     this.authService.login(this.model).subscribe(next => {
-      this.alertify.success('Logged in successfully');
+      this.alertify.message('Logged in successfully');
       this.uniqueName = this.authService.decodedToken.unique_name;
     }, error => {
       this.alertify.error(error); // 'Failed to log in.'
     });
   }
 
-  loggedIn() {
-    return this.authService.loggedIn();
-  }
-
   logout() {
     localStorage.removeItem('token');
     this.alertify.message('Logged out.');
   }
+
+  loggedIn() {
+    return this.authService.loggedIn();
+  }
+
 }
 
 

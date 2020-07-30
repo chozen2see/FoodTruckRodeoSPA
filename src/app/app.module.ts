@@ -16,6 +16,19 @@ import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
+import { FooterComponent } from './footer/footer.component';
+import { SpecialsComponent } from './specials/specials.component';
+import { TruckComponent } from './truck/truck.component';
+import { BreakfastComponent } from './breakfast/breakfast.component';
+import { LunchComponent } from './lunch/lunch.component';
+import { MealsComponent } from './meals/meals.component';
+import { SidesComponent } from './sides/sides.component';
+import { BeveragesComponent } from './beverages/beverages.component';
+import { DessertsComponent } from './desserts/desserts.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 // must have at least one file decorated w @NgModule
 // services get added to providers array
@@ -25,7 +38,20 @@ import { ErrorInterceptorProvider } from './_services/error.interceptor';
       AppComponent,
       NavComponent,
       HomeComponent,
-      RegisterComponent
+      RegisterComponent,
+      FooterComponent,
+      SpecialsComponent,
+      TruckComponent,
+      BreakfastComponent,
+      LunchComponent,
+      MealsComponent,
+      SidesComponent,
+      BeveragesComponent,
+      DessertsComponent,
+      AboutComponent,
+      ContactComponent,
+      CartComponent,
+      CheckoutComponent
    ],
    imports: [
       BrowserModule,

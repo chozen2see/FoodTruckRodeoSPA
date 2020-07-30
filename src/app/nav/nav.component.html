@@ -11,7 +11,7 @@
     <!-- <div class="justify-content-end"> -->
 
     <!-- ngIf is a structural directive indicated by asterisk, which directly change the DOM -->
-    <!-- <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
+    <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="#">Matches</a>
       </li>
@@ -21,7 +21,7 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Messages</a>
       </li>
-    </ul> -->
+    </ul>
 
     <!-- *ngIf="loggedIn()" only show if user logged in -->
     <div *ngIf="loggedIn()" class="dropdown" dropdown>
@@ -72,11 +72,8 @@
         autocomplete="current-password"
       />
 
-      <button
-        [disabled]="!loginForm.valid"
-        class="btn btn-primary my-2 my-sm-0"
-        type="submit"
-      >
+      <!-- removed from button below [disabled]="!loginForm.valid" -->
+      <button class="btn btn-primary my-2 my-sm-0" type="submit">
         Login
       </button>
     </form>

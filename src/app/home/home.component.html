@@ -1,86 +1,41 @@
-<div class="container mt-3">
-  <div class="col-12 mb-2">
-    <img
-      src="../assets/img/Rolling_Soul_Wavy_Transparent.png"
-      alt="Rolling Soul"
-      class="rs-logo"
-    />
+<div class="container home">
+  <div class="row justify-content-between">
+    <div class="col-7 mb-3">
+      <img
+        src="../assets/img/Rolling_Soul_Wavy_Transparent.png"
+        alt="Rolling Soul"
+        class="rs-logo"
+      />
+    </div>
+    <div *ngIf="!loggedIn()" class="col-4">
+      <div class="footnote text-center mt-3">
+        PRESSED FOR TIME?<br /> 
+        <a href="#">LOGIN</a>
+        <!-- <span class="text-primary">LOGIN</span>  -->
+        TO PLACE YOUR ORDER. <br />
+        NEED AN ACCOUNT? <a class="text-primary cursor" (click)="registerToggle()">REGISTER HERE</a>.
+      </div>
+    </div>    
   </div>
 
-  <div class="row justify-content-between">
+  <div class="row justify-content-between row-wrapper">
     <div class="col bg-primary placemat mr-5">
       <div class="container bg-light placemat-inner">
-        <div class="pageTitle">
-          <h3>soul food on the go</h3>
-        </div>
-        <hr class="separator" />
-        <div class="callout">
-          <h5>Summer Specials</h5>
-          <p>
-            INTRODUCING OUR EXCLUSIVE "SUMMER'S BREEZE" STRAWBERRY LEMONADE MADE
-            WITH REAL HAND JUICED FRESH STRAWBERRIES AND LEMONS.
-          </p>
-          <p class="text-right" style="text-align: right;">$3 (16OZ)</p>
-  
-          <p>
-            ITALIAN ICEES ARE BACK!<br />
-            PINA COLADA. BLUE RASPBERRY. STRAWBERRY.
-          </p>
-          <p class="text-right" style="text-align: right;">$2.50 PER CUP</p>
-        </div>
-        <div class="footnote text-center mt-3">
-          PRESSED FOR TIME? <a href="#">LOGIN</a> TO PLACE YOUR ORDER. <br />
-          NEED AN ACCOUNT? <a class="text-primary cursor" (click)="registerToggle()">REGISTER HERE</a>.
-        </div>
+        <app-specials (registerToggle)="registerToggle()"></app-specials>
       </div>
     </div>
   
-    <div class="col-4 placemat-inner bg-light">
+    <div class="col-4 bg-light panel">
       <div *ngIf="!registerMode" class="text-center">
-        <h2>find the truck</h2>
-        <hr />
-        <p class="lead">
-          <!-- Come on in to view your matches... All you need to do is sign up! -->
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad maiores animi molestiae assumenda, temporibus fugit quidem, ipsa nesciunt incidunt totam ab soluta praesentium veritatis odit enim, minima qui officiis minus.
-        </p>
-        <hr />
-        <!-- <div class="justify-content-between"> -->
-          <button class="btn btn-primary btn-lg" (click)="registerToggle()">
-            Register
-          </button>
-          <!-- <button class="btn btn-info btn-lg">Learn more</button> -->
-        <!-- </div> -->
+        <app-truck (registerToggle)="registerToggle()"></app-truck>
       </div>
   
-      <div *ngIf="registerMode" class="text-center">
-        <!-- <div class="row">
-          <div class="col-4"> -->
+      <div *ngIf="registerMode && !loggedIn()" class="text-center">
             <!-- pass values as INPUT prop (valuesFromHome) to child component app-register -->
             <!-- the (cancelRegister) event receives the $event from the child register component when the cancel button is clicked on the child register component's form and passes it to the cancelRegisterMode funct -->
-            <app-register (cancelRegister)="cancelRegisterMode($event)">
-            </app-register>
-          <!-- </div>
-        </div> -->
+        <app-register (cancelRegister)="cancelRegisterMode($event)">
+        </app-register>
       </div>
     </div>
   </div>
-
-
 </div>
-  <footer class="footer bg-dark mt-2 py-2"> 
-    <div class="container">
-      <div class="menu row justify-content-between">
-        <p>menu:</p>  
-        <p class="cursor">breakfast</p> 
-        <p class="cursor">lunch / dinner</p>  
-        <p class="cursor">meals / platters</p>
-        <p class="cursor">side items</p>
-        <p class="cursor">beverages</p>
-        <p class="cursor">desserts</p>
-      </div>
-      <nav>
-
-      </nav>      
-    </div>
-
-  </footer>

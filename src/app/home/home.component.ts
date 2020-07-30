@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AuthService } from '../_services/auth.service';
 
 // use dependency injection inside Angular project
 // to bring in HTTP client to use this to call API
@@ -15,10 +16,22 @@ export class HomeComponent implements OnInit {
   registerMode = false;
 
   // inject HttpClient to make calls to API BackEnd
-  constructor(private http: HttpClient) { }
+  constructor(
+    private authService: AuthService,
+    private http: HttpClient
+  ) { }
 
   // make call to API here
   ngOnInit() {
+  }
+
+  loggedIn() {
+    const userLoggedIn = this.authService.loggedIn();
+    if (userLoggedIn)
+    {
+      this.registerMode = false;
+    }
+    return userLoggedIn;
   }
 
   // will set register mode to true

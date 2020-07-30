@@ -1,15 +1,28 @@
+.home {
+  /* margin: 0; */
+  padding: 0;
+}
+.row-wrapper {
+  min-height: 500px; 
+}
+
 .placemat-inner,
-.placemat {
+.placemat,
+.panel {
   padding: 30px;
   border-radius: 25px;
 }
 
-.placemat-inner {
+.placemat-inner,
+.panel {
   opacity: 0.8;
 }
 
+.placemat-inner {
+  height: 100%;
+}
+
 .placemat {
-  z-index: 10;
   opacity: 0.9;
 }
 
@@ -18,22 +31,6 @@
 }
 
 .rs-logo {
+  padding-left: 5%;
   width: 100%;
-}
-
-.cursor:hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.menu > p {
-  font-size: 1.5em;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100vw;
-  opacity: 0.8;
-  color: bisque;
 }
