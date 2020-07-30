@@ -1,6 +1,6 @@
 <div class="container home">
   <div class="row justify-content-between">
-    <div class="col-7 mb-3">
+    <div class="col-7 mb-3 cursor" [routerLink]="['/']">
       <img
         src="../assets/img/Rolling_Soul_Wavy_Transparent.png"
         alt="Rolling Soul"
@@ -21,7 +21,8 @@
   <div class="row justify-content-between row-wrapper">
     <div class="col bg-primary placemat mr-5">
       <div class="container bg-light placemat-inner">
-        <app-specials (registerToggle)="registerToggle()"></app-specials>
+        <!-- <app-specials (registerToggle)="registerToggle()"></app-specials> -->
+        <router-outlet></router-outlet> 
       </div>
     </div>
   

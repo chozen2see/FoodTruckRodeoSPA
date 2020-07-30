@@ -2,12 +2,39 @@
   <div class="container">
     <div class="menu row justify-content-between">
       <p>menu:</p>  
-      <p class="cursor">breakfast</p> 
-      <p class="cursor">lunch / dinner</p>  
-      <p class="cursor">meals / platters</p>
-      <p class="cursor">side items</p>
-      <p class="cursor">beverages</p>
-      <p class="cursor">desserts</p>
+      <!-- routerLinkActive="router-link-active"  -->
+      <p class="cursor" 
+         [routerLink]="['/menu/breakfast']"
+         routerLinkActive="text-warning">breakfast</p> 
+      <p class="cursor"
+         [routerLink]="['/menu/lunch']"
+         routerLinkActive="text-warning">lunch / dinner</p>  
+      <p class="cursor"
+         [routerLink]="['/menu/meals']"
+         routerLinkActive="text-warning">meals / platters</p>
+      <p class="cursor"
+         [routerLink]="['/menu/sides']"
+         routerLinkActive="text-warning">side items</p>
+      <p class="cursor"
+         [routerLink]="['/menu/beverages']"
+         routerLinkActive="text-warning">beverages</p>
+      <p class="cursor"
+         [routerLink]="['/menu/desserts']"
+         routerLinkActive="text-warning">desserts</p>
+    </div>  
+
+    <div class="menu row justify-content-around">
+      <p class="cursor"
+         [routerLink]="['/']">home</p> 
+      <p class="cursor"
+         [routerLink]="['/about']"
+         routerLinkActive="text-warning">about us</p>  
+      <p class="cursor"
+         [routerLink]="['/find']"
+         routerLinkActive="text-warning">find the truck</p>
+      <p class="cursor"
+         [routerLink]="['/contact']"
+         routerLinkActive="text-warning">contact us</p>
     </div>  
   </div>
 </footer>

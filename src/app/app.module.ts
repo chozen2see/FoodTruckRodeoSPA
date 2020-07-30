@@ -5,17 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { RouterModule } from '@angular/router';
 
 // COMPONENTS
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
-
-
-// SERVICES
-import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
-import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { FooterComponent } from './footer/footer.component';
 import { SpecialsComponent } from './specials/specials.component';
 import { TruckComponent } from './truck/truck.component';
@@ -29,6 +25,13 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+
+// SERVICES
+import { AuthService } from './_services/auth.service';
+import { ErrorInterceptorProvider } from './_services/error.interceptor';
+
+// ROUTES
+import { appRoutes } from './routes';
 
 // must have at least one file decorated w @NgModule
 // services get added to providers array
@@ -58,7 +61,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
       HttpClientModule,
       FormsModule,
       BrowserAnimationsModule,
-      BsDropdownModule.forRoot()
+      BsDropdownModule.forRoot(),
+      RouterModule.forRoot(appRoutes)
    ],
    providers: [
       AuthService,
