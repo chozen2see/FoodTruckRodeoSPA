@@ -28,7 +28,7 @@ export class NavComponent implements OnInit {
 
   login() {
     this.authService.login(this.model).subscribe(next => {
-      this.alertify.message('Logged in successfully');
+      this.alertify.success('Logged in successfully');
       this.uniqueName = this.authService.decodedToken.unique_name;
     }, error => {
       this.alertify.error(error); // 'Failed to log in.'
