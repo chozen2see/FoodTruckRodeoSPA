@@ -26,16 +26,31 @@ export class AppComponent implements OnInit {
   uniqueName: string;
   // authO helper service
   jwtHelper = new JwtHelperService();
+  // foodTruckId
+  foodTruckId: number;
 
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
+    // check to see if user already logged in
     const token = localStorage.getItem('token');
+
+    // if so, decode token and set unique name
     if (token) {
       this.authService.decodedToken =
                 this.jwtHelper.decodeToken(token);
       this.uniqueName = this.authService.decodedToken?.unique_name;
     }
+
+    // check to see if foodTruckId has been saved
+    const id = parseInt(localStorage.getItem('foodTruckId'));
+
+    // if not set it to 1 - Rolling Soul
+    if (id === undefined || isNaN(id)) {
+      this.foodTruckId = 1;
+      localStorage.setItem('foodTruckId', '1');
+    }
+
   }
 
 }

@@ -1,3 +1,21 @@
-<p>
-  breakfast works!
-</p>
+<div class="container">
+  <div *ngIf="breakfast" class="row">
+    <div class="full-width">
+      <h3>{{ breakfast.name }}</h3>
+      <hr />
+      <div class="menu-container">
+        <div class="item" *ngFor="let item of breakfast.items">
+          <div class="col">
+            <div class="item-header-row row">
+              <div class="item-header">{{ item.name }} | ${{ item.price }}</div>
+              <button class="btn btn-primary btn-md item-button">ADD</button>
+            </div>
+            <div class="item-body-row row">
+              <div class="item-body">{{ item.description }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -10,6 +10,18 @@
 
 @import "../node_modules/alertifyjs/build/css/themes/bootstrap.min.css";
 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300&family=Poppins:wght@300&display=swap');
+
+/* font-family: 'Bebas Neue', cursive;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Poppins', sans-serif; */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 .test {
   border: 2px solid red;
 }
@@ -21,4 +33,55 @@
 
 .full-height {
   height: 100%;
+}
+
+.full-width {
+  width: 98%;
+}
+
+.menu-title {
+  font-size: 25pt;
+  font-weight: bold;
+  letter-spacing: 3px;
+  padding: 0;
+}
+
+.menu-container {
+  max-height: 325px;
+  overflow-y: scroll;
+  padding-top: 2px;
+}
+
+.item {
+  background-color: whitesmoke;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  display: flex;
+  border-radius: 5px;
+  min-height: 70px;
+}
+
+.item-header {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.6rem;
+}
+
+.item-header-row {
+  justify-content: space-between;
+}
+
+.item-body {
+  font-family: 'Poppins', sans-serif;
+  padding: 0 125px 5px 0;
+}
+
+/* .item-body-row {
+  padding: 0;
+} */
+
+.item-button {
+  /* font-family: 'Poppins', sans-serif;
+  font-weight: bold; */
+  padding: 0 25px;
 }

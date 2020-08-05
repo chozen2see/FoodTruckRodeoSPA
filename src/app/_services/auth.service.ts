@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { ArgumentType } from '@angular/compiler/src/core';
+import { environment } from 'src/environments/environment';
 
 // inject things into service. services are not injectable by default so must add @Injectable decorator
 @Injectable({
@@ -10,7 +11,7 @@ import { ArgumentType } from '@angular/compiler/src/core';
 })
 export class AuthService {
 
-  baseUrl = 'http://localhost:5000/api/auth/';
+  baseUrl = environment.apiUrl + 'auth/';
   // authO helper service
   jwtHelper = new JwtHelperService();
   // token decoded by authO
