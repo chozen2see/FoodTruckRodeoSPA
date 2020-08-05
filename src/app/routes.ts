@@ -17,7 +17,7 @@ import { SidesComponent } from './sides/sides.component';
 import { BeveragesComponent } from './beverages/beverages.component';
 import { DessertsComponent } from './desserts/desserts.component';
 import { SpecialsComponent } from './specials/specials.component';
-
+import { ProfileComponent } from './profile/profile.component';
 
 export const appRoutes: Routes = [
   // Routes in an array of route configurations.
@@ -50,6 +50,7 @@ export const appRoutes: Routes = [
     children: [
       { path: 'cart', component: CartComponent},
       { path: 'checkout', component: CheckoutComponent },
+      { path: 'account', component: ProfileComponent }
     ]
   },
 

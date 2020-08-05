@@ -1,0 +1,18 @@
+.about {
+  background-color: rgba(255,255,255,1);
+  padding-left: 10px;
+  margin-bottom: 10px;
+  /* margin-right: 5px; */
+  border-radius: 5px;
+  min-height: 70px;
+}
+
+.about-header {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.6rem;
+}
+
+.about-body {
+  font-family: 'Poppins', sans-serif;
+  padding: 0 40px 5px 0;
+}

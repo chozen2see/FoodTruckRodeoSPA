@@ -1,17 +1,30 @@
 <div class="container">
   <div *ngIf="side" class="row">
     <div class="full-width">
-      <h3>{{ side.name }}</h3>
+      <div class="col">
+        <div class="item-header-row row">
+          <h3>{{ side.name }}</h3>
+          <img 
+            *ngIf="loggedIn()"
+            [routerLink]="['/cart']" 
+            class="img-cart" 
+            src="../../assets/img/cart.png" 
+            alt="view cart">
+        </div>
+      </div>
       <hr />
       <div class="menu-container">
         <div class="item" *ngFor="let item of side.items">
           <div class="col">
             <div class="item-header-row row">
               <div class="item-header">{{ item.name }} | ${{ item.price }}</div>
-              <button class="btn btn-primary btn-md item-button">ADD</button>
+              <button *ngIf="loggedIn()" class="btn btn-primary btn-md item-button">ADD</button>
             </div>
             <div class="item-body-row row">
-              <div class="item-body">{{ item.description }}</div>
+              <div class="item-body-text" 
+              [ngClass]="{ 'item-body': loggedIn(), 'item-body-logged-out': !loggedIn() }">
+              {{ item.description }}
+            </div>
             </div>
           </div>
         </div>

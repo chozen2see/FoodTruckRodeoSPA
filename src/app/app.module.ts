@@ -32,6 +32,7 @@ import { ErrorInterceptorProvider } from './_services/error.interceptor';
 
 // ROUTES
 import { appRoutes } from './routes';
+import { ProfileComponent } from './profile/profile.component';
 
 // must have at least one file decorated w @NgModule
 // services get added to providers array
@@ -54,7 +55,8 @@ import { appRoutes } from './routes';
       AboutComponent,
       ContactComponent,
       CartComponent,
-      CheckoutComponent
+      CheckoutComponent,
+      ProfileComponent
    ],
    imports: [
       BrowserModule,

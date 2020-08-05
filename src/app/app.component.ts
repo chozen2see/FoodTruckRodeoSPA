@@ -43,12 +43,12 @@ export class AppComponent implements OnInit {
     }
 
     // check to see if foodTruckId has been saved
-    const id = parseInt(localStorage.getItem('foodTruckId'));
+    const id = parseInt(localStorage.getItem('fid'));
 
     // if not set it to 1 - Rolling Soul
     if (id === undefined || isNaN(id)) {
       this.foodTruckId = 1;
-      localStorage.setItem('foodTruckId', '1');
+      localStorage.setItem('fid', '1');
     }
 
   }

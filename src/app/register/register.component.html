@@ -3,6 +3,10 @@
   <hr>
 
   <div class="form-group">
+    <input type="text" class="form-control" required name="name" [(ngModel)]="model.name"  placeholder="Name" autocomplete="name">
+  </div>
+
+  <div class="form-group">
     <input type="text" class="form-control" required name="username" [(ngModel)]="model.username"  placeholder="Username" autocomplete="username">
   </div>
 
@@ -10,8 +14,16 @@
     <input type="password" class="form-control" required name="password" [(ngModel)]="model.password" placeholder="Password" autocomplete="new-password">
   </div>
 
+  <div class="form-group">
+    <input type="text" class="form-control" name="email" [(ngModel)]="model.email"  placeholder="Email" autocomplete="email">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="phoneNumber" [(ngModel)]="model.phoneNumber"  placeholder="Phone Number" autocomplete="phoneNumber">
+  </div>
+
   <div class="form-group text-center">
-    <button class="btn btn-success mr-2" type="submit">
+    <button class="btn btn-primary mr-2" type="submit">
       Register
     </button>
     <button class="btn btn-outline-dark" type="button" (click)="cancel()">

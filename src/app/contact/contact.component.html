@@ -1,3 +1,32 @@
-<p>
-  contact works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="full-width">
+      <h3>contact us</h3>
+      <hr />
+      <form
+        action="mailto:contact@yourdomain.com"
+        method="POST"
+        enctype="multipart/form-data"
+        name="EmailTestForm"
+      >
+        <label for="VisitorName" class="control-label">
+          Name:
+        </label>
+        <input class="form-control" type="text" size="24" name="VisitorName" id="VisitorName"/><br />
+
+        <label for="VisitorEmail" class="control-label">
+          Email:
+        </label>
+        <input class="form-control" type="text" size="24" name="VisitorEmail" /><br />
+
+        <label for="VisitorComment" class="control-label">
+          Message:
+        </label>
+        <textarea class="form-control" name="VisitorComment" rows="2">
+        </textarea><br />
+
+        <input class="btn btn-primary" type="submit" value="Submit" />
+      </form>
+    </div>
+  </div>
+</div>

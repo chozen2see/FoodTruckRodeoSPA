@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Menu } from '../_models/menu';
 import { AlertifyService } from '../_services/alertify.service';
 import { FoodTruckService } from '../_services/foodTruck.service';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
   selector: 'app-sides',
   templateUrl: './sides.component.html',
-  styleUrls: ['./sides.component.css']
+  styleUrls: ['./sides.component.css'],
 })
 export class SidesComponent implements OnInit {
   foodTruckId: number;
@@ -15,12 +16,13 @@ export class SidesComponent implements OnInit {
   side: Menu;
 
   constructor(
+    private authService: AuthService,
     private foodTruckService: FoodTruckService,
     private alertify: AlertifyService
   ) {}
 
   ngOnInit() {
-    this.foodTruckId = parseInt(localStorage.getItem('foodTruckId'));
+    this.foodTruckId = parseInt(localStorage.getItem('fid'));
     this.loadMenu();
   }
 
@@ -41,5 +43,9 @@ export class SidesComponent implements OnInit {
     );
 
     return 0;
+  }
+
+  loggedIn() {
+    return this.authService.loggedIn();
   }
 }
