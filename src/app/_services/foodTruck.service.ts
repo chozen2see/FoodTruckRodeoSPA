@@ -2,15 +2,15 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { FoodTruck } from '../_models/foodtruck'
+import { FoodTruck } from '../_models/foodtruck';
 import { Menu } from '../_models/menu';
 import { Item } from '../_models/item';
 
 // add auth to headers (bearer / token) to send with get request
 const httpOptions = {
   headers: new HttpHeaders({
-    'Authorization': 'Bearer ' + localStorage.getItem('token'),
-  }),
+    'Authorization': 'Bearer ' + localStorage.getItem('token')
+  })
 };
 
 @Injectable({
@@ -25,17 +25,20 @@ export class FoodTruckService {
   // must be authorized - will change once select food truck page added
   getFoodTrucks(): Observable<FoodTruck[]> {
     return this.http.get<FoodTruck[]>(this.baseUrl + 'foodtrucks', httpOptions);
-  } 
+  }
 
   getFoodTruck(id: number): Observable<FoodTruck> {
     return this.http.get<FoodTruck>(
-      this.baseUrl + 'foodtrucks/' + id, httpOptions
+      this.baseUrl + 'foodtrucks/' + id
+      // , httpOptions
     );
   }
 
-  // refactor menu and item services 
+  // refactor menu and item services
   getMenus(foodTruckId: number): Observable<Menu[]> {
-    return this.http.get<Menu[]>(this.baseUrl + 'foodtrucks/' + foodTruckId + '/menus', httpOptions);
+    return this.http.get<Menu[]>(this.baseUrl + 'foodtrucks/' + foodTruckId + '/menus'
+    // , httpOptions
+    );
   }
 
   // items are returned as a collection within the menu
@@ -44,7 +47,8 @@ export class FoodTruckService {
     menuId: number
   ): Observable<Menu> {
     return this.http.get<Menu>(
-      this.baseUrl + 'foodtrucks/' + foodTruckId + '/menus/' + menuId, httpOptions
+      this.baseUrl + 'foodtrucks/' + foodTruckId + '/menus/' + menuId
+      // , httpOptions
     );
   }
 
@@ -58,5 +62,5 @@ export class FoodTruckService {
       this.baseUrl + 'foodtrucks/' + foodTruckId + '/menus/' + menuId + '/items/' + itemId, httpOptions
     );
   }
-  
+
 }
