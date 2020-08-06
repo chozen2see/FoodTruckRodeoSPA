@@ -31,6 +31,10 @@ font-family: 'Poppins', sans-serif; */
   text-decoration: underline !important;
 }
 
+.required {
+  color: red;
+}
+
 .full-height {
   height: 100%;
 }
@@ -106,4 +110,11 @@ font-family: 'Poppins', sans-serif; */
   cursor: pointer;
   width: 9%;
   align-self: flex-start;
+}
+
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }

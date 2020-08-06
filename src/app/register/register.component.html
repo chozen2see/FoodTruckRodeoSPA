@@ -1,34 +1,130 @@
-<form #registerForm="ngForm" (ngSubmit)="register()">
-  <h2 class="text-center text-primary">Sign Up</h2>
-  <hr>
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+  <h4 class="text-center text-primary">Sign Up</h4>
+  <hr />
+  <div class="register-container">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        formControlName="Name"
+        placeholder="Name"
+      />
+    </div>
 
-  <div class="form-group">
-    <input type="text" class="form-control" required name="name" [(ngModel)]="model.name"  placeholder="Name" autocomplete="name">
-  </div>
+    <div class="form-group">
+      <input
+        type="text"
+        [ngClass]="{
+          'is-invalid':
+            registerForm.get('Username').errors &&
+            registerForm.get('Username').touched
+        }"
+        class="form-control"
+        formControlName="Username"
+        placeholder="Username (required)"
+        autocomplete="username"
+      />
+      <div class="invalid-feedback">Username is required.</div>
+    </div>
 
-  <div class="form-group">
-    <input type="text" class="form-control" required name="username" [(ngModel)]="model.username"  placeholder="Username" autocomplete="username">
-  </div>
+    <div class="form-group">
+      <input
+        type="password"
+        [ngClass]="{
+          'is-invalid':
+            registerForm.get('Password').errors &&
+            registerForm.get('Password').touched
+        }"
+        class="form-control"
+        formControlName="Password"
+        placeholder="Password (required)"
+        autocomplete="new-password"
+      />
+      <div class="invalid-feedback"
+      *ngIf="registerForm.get('Password').hasError('required') &&
+      registerForm.get('Password').touched">
+        Password is required.
+      </div>
+      <div class="invalid-feedback"
+      *ngIf="registerForm.get('Password').hasError('minlength') &&
+      registerForm.get('Password').touched">
+        Password must be at least 4 characters.
+      </div>
+      <div class="invalid-feedback"
+      *ngIf="registerForm.get('Password').hasError('maxlength') &&
+      registerForm.get('Password').touched">
+      Password cannot exceed 8 characters.
+      </div>
+    </div>
 
-  <div class="form-group">
-    <input type="password" class="form-control" required name="password" [(ngModel)]="model.password" placeholder="Password" autocomplete="new-password">
-  </div>
+    <div class="form-group">
+      <input
+        type="password"
+        [ngClass]="{
+          'is-invalid':
+            registerForm.get('confirmPassword').errors &&
+            registerForm.get('confirmPassword').touched || 
+            registerForm.get('confirmPassword').touched && registerForm.hasError('mismatch')
+        }"
+        class="form-control"
+        formControlName="confirmPassword"
+        placeholder="Confirm Password (required)"
+        autocomplete="new-password"
+      />
+      <div class="invalid-feedback"
+      *ngIf="registerForm.get('confirmPassword').hasError('required') &&
+      registerForm.get('confirmPassword').touched">
+        Password confirmation is required.
+      </div>
+      <div class="invalid-feedback"
+      *ngIf="registerForm.hasError('mismatch') &&
+      registerForm.get('confirmPassword').touched">
+        Passwords do not match.
+      </div>
+    </div>
 
-  <div class="form-group">
-    <input type="text" class="form-control" name="email" [(ngModel)]="model.email"  placeholder="Email" autocomplete="email">
-  </div>
+    <div class="form-group">
+      <input
+        type="text"
+        [ngClass]="{
+          'is-invalid':
+            registerForm.get('Email').errors &&
+            registerForm.get('Email').touched
+        }"
+        class="form-control"
+        formControlName="Email"
+        placeholder="Email (required)"
+      />
+      <div class="invalid-feedback">Email is required.</div>
+    </div>
 
-  <div class="form-group">
-    <input type="text" class="form-control" name="phoneNumber" [(ngModel)]="model.phoneNumber"  placeholder="Phone Number" autocomplete="phoneNumber">
-  </div>
+    <div class="form-group">
+      <input
+        type="text"
+        [ngClass]="{
+          'is-invalid':
+            registerForm.get('PhoneNumber').errors &&
+            registerForm.get('PhoneNumber').touched
+        }"
+        class="form-control"
+        formControlName="PhoneNumber"
+        placeholder="Phone - 9999999999"
+      />
+      <!-- <div class="invalid-feedback"> -->
+        <div class="invalid-feedback"
+        *ngIf="registerForm.get('PhoneNumber').hasError('pattern') &&
+        registerForm.get('PhoneNumber').touched">
+        Phone number must be 10 digits.
+      </div>
+    </div>
 
-  <div class="form-group text-center">
-    <button class="btn btn-primary mr-2" type="submit">
-      Register
-    </button>
-    <button class="btn btn-outline-dark" type="button" (click)="cancel()">
-      Cancel
-    </button>
+    <div class="form-group text-center">
+      <button class="btn btn-primary mr-2" type="submit">
+        Register
+      </button>
+      <button class="btn btn-outline-dark" type="button" (click)="cancel()">
+        Cancel
+      </button>
+    </div>
   </div>
-  
 </form>
