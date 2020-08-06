@@ -29,10 +29,12 @@ import { CheckoutComponent } from './checkout/checkout.component';
 // SERVICES
 import { AuthService } from './_services/auth.service';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
+import { ContactService } from './_services/contact.service';
 
 // ROUTES
 import { appRoutes } from './routes';
 import { ProfileComponent } from './profile/profile.component';
+import { from } from 'rxjs';
 
 // must have at least one file decorated w @NgModule
 // services get added to providers array
@@ -69,7 +71,8 @@ import { ProfileComponent } from './profile/profile.component';
    ],
    providers: [
       AuthService,
-      ErrorInterceptorProvider
+      ErrorInterceptorProvider,
+      ContactService
    ],
    bootstrap: [
       AppComponent

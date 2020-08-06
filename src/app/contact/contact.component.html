@@ -3,12 +3,12 @@
     <div class="full-width">
       <h3>contact us</h3>
       <hr />
-      <form [formGroup]="contactForm" (ngSubmit)="sendMessage()">
-        <!-- action="mailto:contact@yourdomain.com"
-        method="POST"
-        enctype="multipart/form-data"
-        formControlName="EmailTestForm" -->
-
+      <form [formGroup]="contactForm" 
+      (ngSubmit)="sendMessage(contactForm.value)"
+      >
+      <!--       action="https://formspree.io/xbjzweql"
+      method="POST" -->
+      <input type="hidden" name="_subject" value="Rolling Soul Contact Request" />
         <div class="form-group">
           <label for="contactName" class="control-label">
             Name: <span class="required">*</span> 
@@ -24,6 +24,7 @@
                 contactForm.get('contactName').errors &&
                 contactForm.get('contactName').touched
             }"
+            name="contactName"
           /><div class="invalid-feedback">Name is required.</div>
         </div>
 
@@ -41,6 +42,7 @@
                 contactForm.get('contactEmail').errors &&
                 contactForm.get('contactEmail').touched
             }"
+            name="_replyto"
           /><div class="invalid-feedback">Valid email is required.</div>
         </div>
 
@@ -56,13 +58,21 @@
               'is-invalid':
                 contactForm.get('contactMessage').errors &&
                 contactForm.get('contactMessage').touched
-            }">
+            }"
+            name="message"
+            >
         </textarea>
         <div class="invalid-feedback">Message is required.</div>
         </div>
 
         <div class="form-group">
-          <button class="btn btn-primary" type="submit">Submit</button>
+          <button 
+            class="btn btn-primary" 
+            type="submit"
+            [disabled]="!contactForm.valid"
+          >
+            Submit
+          </button>
         </div>
       </form>
     </div>
