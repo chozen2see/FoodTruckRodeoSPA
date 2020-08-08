@@ -1,23 +1,33 @@
 <div class="container">
   <div *ngIf="user" class="row">
     <div class="full-width">
-      <h3>{{ user.name }}</h3>
+      <div class="col">
+        <div class="item-header-row row">
+          <h3>user profile: {{ user.username }}</h3>
+          <button
+            class="btn btn-primary btn-md"
+            type="submit"
+          >
+            Edit 
+          </button>
+        </div>
+      </div>
       <hr />
       <div class="menu-container">
         <form #userForm="ngForm" (ngSubmit)="saveUser()">
-          <label for="name">User Name</label>
-          <p>{{ user.username }}</p>
+          <label for="name">User Name:</label>
+          <h4>{{ user.username }}</h4>
 
           <label for="name">Name</label>
-          <p>{{ user.name }}</p>
+          <h4>{{ user.name }}</h4>
           <!-- <input id="name" type="text"
           name="name" [(ngModel)]="model.name"
           #name="ngModel" value="{{ user.name }}"/>
           <div *ngIf="name.touched && name.hasError('required')">Required</div> -->
 
-          <div class="">            
+          <div class="">
             <label for="email">Email:</label>
-            <p>{{ user.email }}</p>
+            <h4>{{ user.email }}</h4>
             <!-- <input id="email" type="text"
             name="email" [(ngModel)]="model.email"
             #email="ngModel" value="{{ user.email }}"/>
@@ -25,13 +35,12 @@
           </div>
 
           <label for="phoneNumber">Phone</label>
-          <p>{{ user.phoneNumber }}</p>
+          <h4>{{ user.phoneNumber }}</h4>
           <!-- <input id="phoneNumber" type="text"
           name="phoneNumber" [(ngModel)]="model.phoneNumber"
           #profile="ngModel" value="{{ user.phoneNumber }}"/>
           <div *ngIf="profile.touched && profile.hasError('required')">Invalid</div> -->
-        <br />
-          <!-- <button type="submit" [disabled]="!userForm.valid">Submit</button> -->
+          <br />
         </form>
       </div>
     </div>

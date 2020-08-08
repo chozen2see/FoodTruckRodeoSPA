@@ -112,6 +112,12 @@ font-family: 'Poppins', sans-serif; */
   align-self: flex-start;
 }
 
+.truck-container {
+  max-height: 350px;
+  overflow-y: auto;
+  padding-top: 2px;
+}
+
 
 @keyframes blinker {
   50% {

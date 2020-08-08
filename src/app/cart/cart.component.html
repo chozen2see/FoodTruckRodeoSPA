@@ -1,3 +1,50 @@
-<p>
-  cart works!
-</p>
+<div class="container">
+  <div *ngIf="cart" class="row">
+    <div class="full-width">
+      <div class="col">
+        <div class="item-header-row row">
+          <h3>food truck cart</h3>
+          <a href="/cart" class="btn btn-primary btn-md text-center">
+            Checkout
+          </a>
+        </div>
+      </div>
+      <hr />
+      <div class="menu-container">
+        <div class="item" *ngFor="let cartItem of cart.cartItemDetails">
+          <div class="col">
+            <div class="item-header-row row">
+              <div class="item-header">{{ cartItem.item.name }} | ${{ cartItem.item.price }} (Qty: {{ cartItem.quantity }})</div>
+              <div
+                *ngIf="loggedIn()"
+                class="item-header item-button"
+              >
+              ${{ cartItem.item.price * cartItem.quantity }}
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <hr />
+        <div class="col">
+          <div class="item-header-row row">
+            <div class="item-header">Sub Total</div>
+            <div
+              class="item-header item-button"
+            >
+            ${{ cart.subTotal }}
+            </div>
+          </div>
+          <div class="item-header-row row">
+            <div class="item-header">Cart Total (w/ 8% Food Tax)</div>
+            <div
+              class="item-header item-button"
+            >
+            ${{ cart.total }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
