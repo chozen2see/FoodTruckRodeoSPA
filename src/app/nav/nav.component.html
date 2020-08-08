@@ -28,11 +28,16 @@
       <a class="dropdown-toggle text-light" dropdownToggle (click)="(false)">
         Welcome {{ uniqueName | titlecase }}
       </a>
-
+      
       <div class="dropdown-menu mt-3" *dropdownMenu>
         <a class="dropdown-item" [routerLink]="['/account']">
           <i class="fa fa-user"></i>
            My Profile
+        </a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" [routerLink]="['/cart']">
+          <i class="fa fa-shopping-cart"></i>
+           My Cart
         </a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" (click)="logout()">
