@@ -14,7 +14,9 @@
         <div class="item" *ngFor="let cartItem of cart.cartItemDetails">
           <div class="col">
             <div class="item-header-row row">
-              <div class="item-header">{{ cartItem.item.name }} | ${{ cartItem.item.price }} (Qty: {{ cartItem.quantity }})</div>
+              <div class="item-header">
+              {{ cartItem.item.name }} | ${{ cartItem.item.price }} (Qty: {{ cartItem.quantity}})
+              </div>
               <div
                 *ngIf="loggedIn()"
                 class="item-header item-button"
@@ -22,7 +24,6 @@
               ${{ cartItem.item.price * cartItem.quantity }}
               </div>
             </div>
-
           </div>
         </div>
         <hr />

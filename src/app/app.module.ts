@@ -34,7 +34,7 @@ import { ContactService } from './_services/contact.service';
 // ROUTES
 import { appRoutes } from './routes';
 import { ProfileComponent } from './profile/profile.component';
-import { from } from 'rxjs';
+
 
 // must have at least one file decorated w @NgModule
 // services get added to providers array
