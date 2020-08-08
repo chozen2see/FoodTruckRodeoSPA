@@ -15,7 +15,7 @@ See Original Readme
 
 ## Planning Story
 
-Lorem ipsum dolor amet cloud bread letterpress squid actually, single-origin coffee williamsburg af poutine fingerstache austin semiotics paleo man braid vexillologist. Tumeric literally banjo pickled disrupt cold-pressed thundercats shoreditch try-hard health goth intelligentsia pop-up small batch skateboard farm-to-table. Meh tofu fam, direct trade tattooed stumptown etsy everyday carry activated charcoal. Neutra cornhole polaroid literally salvia, listicle tofu.
+I wanted to stretch myself with this entire project. I chose two new technologies that I had never used before in an attempt to apply what I learned regarding full stack web development in bootcamp. We are also considering using these technologies at work for a site redesign so I thought it would be helpful to get a headstart.
 
 ### User Stories
 
