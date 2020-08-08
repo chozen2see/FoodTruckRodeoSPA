@@ -37,14 +37,7 @@ ADMIN SYSTEM
 - An admin will be able to find a customer order. 
 - An admin will be able to view customer orders (continuous feed). 
 
-
 ### Technologies Used - Front End
-
-- ASPNET Core (v3.1) - Web API / .NET CLI
-- Entity Framework Core (v3.1.6) 
-- AutoMapper
-
-### Technologies Used - Back End
 
 - Angular (v10.0.4) - CLI
 - TypeScript
@@ -54,17 +47,14 @@ ADMIN SYSTEM
 - FontAwesome
 - Validation with Reactive Forms
 - Deployment to Heroku using Docker container
+- Contact Us Page (https://formspree.io/)
 
+### Technologies Used - Back End
 
-### Catalog of Routes
-
-Verb         |	URI Pattern
------------- | -------------
-GET | /resources
-GET | /resources/:id
-POST | /resources
-PATCH | /resources/:id
-DELETE | /resources/:id
+- ASPNET Core (v3.1) - Web API / .NET CLI
+- Entity Framework Core (v3.1.6) 
+- AutoMapper
+- SQLite
 
 ### Unsolved Problems
 
