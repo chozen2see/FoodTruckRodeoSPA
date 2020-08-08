@@ -71,15 +71,8 @@ DELETE | /resources/:id
 - Still need to finish the shopping cart functionality along with the payment options.
 - Figure out how to deploy backend with Docker and Heroku
 
-## Images
-
-#### App Screenshot:
-![screenshot](https://media.idownloadblog.com/wp-content/uploads/2017/07/Select-Instagram-story-to-save-to-iPhone.jpeg)
-
----
-
 #### Wireframe:
-![wireframe](https://lucidchart.zendesk.com/hc/article_attachments/360001080866/Facebook_Wireframe_-_New_Page.png)
+![wireframe](https://github.com/chozen2see/FoodTruckRodeoSPA/blob/master/WireFrames.pdf)
 
 ---
 
