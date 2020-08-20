@@ -26,6 +26,7 @@ import { ContactComponent } from './contact/contact.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 
+
 // SERVICES
 import { AuthService } from './_services/auth.service';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
@@ -34,13 +35,14 @@ import { ContactService } from './_services/contact.service';
 // ROUTES
 import { appRoutes } from './routes';
 import { ProfileComponent } from './profile/profile.component';
+import { AddtocartbuttonComponent } from './addtocartbutton/addtocartbutton.component';
 
 
 // must have at least one file decorated w @NgModule
 // services get added to providers array
 
 @NgModule({
-   declarations: [
+   declarations: [		
       AppComponent,
       NavComponent,
       HomeComponent,
@@ -58,7 +60,8 @@ import { ProfileComponent } from './profile/profile.component';
       ContactComponent,
       CartComponent,
       CheckoutComponent,
-      ProfileComponent
+      ProfileComponent,
+      AddtocartbuttonComponent
    ],
    imports: [
       BrowserModule,

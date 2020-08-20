@@ -1,5 +1,5 @@
 <div class="container">
-  <div *ngIf="cart" class="row">
+  <div class="row">
     <div class="full-width">
       <div class="col">
         <div class="item-header-row row">
@@ -10,18 +10,38 @@
         </div>
       </div>
       <hr />
-      <div class="menu-container">
+      <!-- if no items in cart, display message -->
+      <div *ngIf="!cart || cart.cartItemDetails.length === 0" class="lead">
+        Please select one of our tasty menu items to add to your cart!
+      </div>
+
+      <!-- display items in cart when available -->
+      <div
+        *ngIf="cart && cart.cartItemDetails.length > 0"
+        class="menu-container"
+      >
         <div class="item" *ngFor="let cartItem of cart.cartItemDetails">
           <div class="col">
             <div class="item-header-row row">
               <div class="item-header">
-              {{ cartItem.item.name }} | ${{ cartItem.item.price }} (Qty: {{ cartItem.quantity}})
+                {{ cartItem.item.name }} | ${{ cartItem.item.price }} ea.
               </div>
-              <div
-                *ngIf="loggedIn()"
-                class="item-header item-button"
-              >
-              ${{ cartItem.item.price * cartItem.quantity }}
+              <div class="item-header item-button">
+                ${{ cartItem.item.price * cartItem.quantity }}
+              </div>
+            </div>
+            <div class="row align-text-center">
+              <div class="item-header">
+                <a class="cursor text-primary" (click)="deleteItem(cartItem.itemId)">
+                  <i class="fa fa-trash mr-5" style="font-size:24px"></i>
+                </a>
+                <a class="cursor text-primary" (click)="increaseQty(cartItem.item, cartItem.itemId, cartItem.quantity)">
+                  <i class="fa fa-plus-circle mr-2" style="font-size:22px"></i>
+                </a>
+                Qty: {{ cartItem.quantity}} 
+                <a class="cursor text-primary" (click)="decreaseQty(cartItem.item, cartItem.itemId, cartItem.quantity)">
+                  <i class="fa fa-minus-circle ml-2" style="font-size:22px"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -30,19 +50,11 @@
         <div class="col">
           <div class="item-header-row row">
             <div class="item-header">Sub Total</div>
-            <div
-              class="item-header item-button"
-            >
-            ${{ cart.subTotal }}
-            </div>
+            <div class="item-header item-button">${{ cart.subTotal }}</div>
           </div>
           <div class="item-header-row row">
             <div class="item-header">Cart Total (w/ 8% Food Tax)</div>
-            <div
-              class="item-header item-button"
-            >
-            ${{ cart.total }}
-            </div>
+            <div class="item-header item-button">${{ cart.total }}</div>
           </div>
         </div>
       </div>
