@@ -19,16 +19,19 @@
           <div class="col">
             <div class="item-header-row row">
               <div class="item-header">{{ item.name }} | ${{ item.price }}</div>
-              <button
-                *ngIf="loggedIn()"
-                class="btn btn-primary btn-md item-button"
-              >
-                ADD
-              </button>
+              <app-addtocartbutton
+                [foodTruckId]="foodTruckId"
+                [item]="item"
+              ></app-addtocartbutton>
             </div>
             <div class="item-body-row row">
-              <div class="item-body-text" 
-                [ngClass]="{ 'item-body': loggedIn(), 'item-body-logged-out': !loggedIn() }">
+              <div
+                class="item-body-text"
+                [ngClass]="{
+                  'item-body': loggedIn(),
+                  'item-body-logged-out': !loggedIn()
+                }"
+              >
                 {{ item.description }}
               </div>
             </div>

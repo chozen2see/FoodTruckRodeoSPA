@@ -10,6 +10,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
   // use INPUT similar to params. PROP being passed from parent
+  
   // use OUTPUT to emit event (cancelRegister) back to parent
   @Output() cancelRegister = new EventEmitter();
 
