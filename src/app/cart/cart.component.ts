@@ -40,6 +40,7 @@ export class CartComponent implements OnInit {
   loadCart() {
     this.cartService.getCart(this.cartId, this.foodTruckId, this.userId).subscribe(
       (cart: Cart) => {
+        cart.total  = parseFloat(cart.total.toFixed(2));
         this.cart = cart;
         // console.log(cart);
       },
